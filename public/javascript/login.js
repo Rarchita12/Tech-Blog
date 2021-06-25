@@ -15,7 +15,8 @@ async function loginFormHandler(event) {
     });
 
     if (response.ok) {
-      document.location.replace("/main/");
+      //   document.location.replace("/main/");
+      console.log("success");
     } else {
       alert(response.statusText);
     }
