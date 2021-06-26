@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
-//const { Post, User, Comment, Vote } = require('../models');
+const withAuth = require("../utils/auth");
+const { Post, User, Comment } = require("../models");
 
 // get all posts for homepage
 router.get("/", (req, res) => {
@@ -9,25 +10,20 @@ router.get("/", (req, res) => {
   res.render("homepage");
 });
 
-/*
+// get all posts for homepage
+router.get("/loggedInView", (req, res) => {
+  console.log("======================");
+
+  res.render("loggedInView", { loggedIn: true });
+});
+
 // get single post
 router.get("/post/:id", (req, res) => {
   Post.findOne({
     where: {
       id: req.params.id,
     },
-    attributes: [
-      "id",
-      "post_url",
-      "title",
-      "created_at",
-      [
-        sequelize.literal(
-          "(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)"
-        ),
-        "vote_count",
-      ],
-    ],
+    attributes: ["id", "post_content", "title", "created_at"],
     include: [
       {
         model: Comment,
@@ -61,11 +57,10 @@ router.get("/post/:id", (req, res) => {
       res.status(500).json(err);
     });
 });
-*/
 
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect("/", { loggedIn: req.session.loggedIn });
+    res.redirect("/");
     return;
   }
 

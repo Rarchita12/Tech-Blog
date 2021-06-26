@@ -15,7 +15,7 @@ async function loginFormHandler(event) {
     });
 
     if (response.ok) {
-      window.location.replace("/");
+      document.location.replace("/loggedInView/");
       console.log("success");
     } else {
       alert(response.statusText);
@@ -40,7 +40,7 @@ async function signupFormHandler(event) {
     });
 
     if (response.ok) {
-      // document.location.replace("/dashboard/");
+      document.location.replace("/loggedInView/");
     } else {
       alert(response.statusText);
     }
