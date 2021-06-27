@@ -17,8 +17,8 @@ This application allows developers to publish their blog posts and comment on ot
 
 ## Website
 
-Link to walk-through video:
-https://drive.google.com/file/d/1zFeulzCNjX1cn94UYgbACT5Qth3AO5NG/view?usp=sharing
+Deployed Application Link:
+https://arcane-waters-46579.herokuapp.com/
 
 ![](images/screenshot.JPG)
 
