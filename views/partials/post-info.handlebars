@@ -1,3 +1,4 @@
+<a href="/post/{{id}}">
 <article class="post">
   <div class="title">
     {{title}}
@@ -10,6 +11,8 @@
   </div>
   <div class="meta">
     
-    <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+    
+    <p>{{comments.length}} {{format_plural "comment" comments.length}}</p>
   </div>
 </article>
+</a>

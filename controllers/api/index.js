@@ -1,3 +1,4 @@
+//user, post and comment routes
 const router = require("express").Router();
 
 const userRoutes = require("./user-routes.js");

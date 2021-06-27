@@ -1,3 +1,4 @@
+//routes for api, home, and dashboard
 const router = require("express").Router();
 const dashboardRoutes = require("./dashboard-routes.js");
 const homeRoutes = require("./home-routes.js");
